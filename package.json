@@ -1,0 +1,19 @@
+{
+  "name": "font-size",
+  "version": "0.0.0",
+  "description": "Calculate CSS font sizes in px, em, % etc",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/j-/font-size.git"
+  },
+  "author": "Jamie Hoeks <j@skeoh.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/j-/font-size/issues"
+  },
+  "homepage": "https://github.com/j-/font-size#readme"
+}
