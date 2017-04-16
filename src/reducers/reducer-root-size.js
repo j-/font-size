@@ -1,5 +1,9 @@
+import {
+	UNIT_PERCENT,
+} from './units';
+
 const DEFAULT_STATE = {
-	items: [],
+	item: [100, UNIT_PERCENT],
 };
 
 export default (state = DEFAULT_STATE, action) => {
@@ -9,4 +13,4 @@ export default (state = DEFAULT_STATE, action) => {
 	}
 };
 
-export const getItems = (state) => state.items;
+export const getRootItem = (state) => state.item;
