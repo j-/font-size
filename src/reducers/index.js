@@ -1,5 +1,9 @@
 import { combineReducers } from 'redux';
-import { calculateFontSize, calculateRootFontSize } from './calculate-font-size';
+
+import {
+	calculateFontSize,
+	calculateRootFontSize,
+} from '../utils/calculate-font-size';
 
 import defaultSize, * as defaultSizeModule from './reducer-default-size';
 import rootSize, * as rootSizeModule from './reducer-root-size';

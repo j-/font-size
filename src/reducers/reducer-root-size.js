@@ -4,7 +4,7 @@ import {
 
 import {
 	UNIT_PERCENT,
-} from './units';
+} from '../utils/units';
 
 const DEFAULT_STATE = {
 	item: [100, UNIT_PERCENT],

@@ -4,7 +4,7 @@ import {
 	SET_ITEM,
 } from './types';
 
-import { parseItem } from './parser';
+import { parseItem } from '../utils/parser';
 
 export const setDefaultSize = (size) => ({
 	type: SET_DEFAULT_SIZE,
