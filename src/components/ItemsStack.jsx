@@ -8,7 +8,7 @@ const getStackElements = (count) => {
 	const elements = [];
 	for (let i = 0; i <= count; i++) {
 		elements.push(
-			<li key={ i } value={ i + 1 }>
+			<li key={ i } value={ i + 1 } className="font-size-item">
 				<ItemContainer index={ i } />
 				{ i < count && <RemoveButtonContainer index={ i } /> }
 			</li>
@@ -19,7 +19,7 @@ const getStackElements = (count) => {
 
 const ItemsStack = ({ count }) => (
 	<ol className="font-size-items">
-		<li value={ 0 }>
+		<li value={ 0 } className="font-size-item font-size-item--root">
 			<ItemRootContainer />
 		</li>
 		{ getStackElements(count) }
