@@ -18,4 +18,4 @@ export const VALUE_XX_LARGE = 'xx-large'; // 32px
 export const VALUE_INHERIT  = 'inherit';  // 100%
 export const VALUE_INITIAL  = 'initial';  // 16px
 export const VALUE_UNSET    = 'unset';    // 100%
-export const VALUE_ZERO     = 0;
+export const VALUE_ZERO     = '0';
