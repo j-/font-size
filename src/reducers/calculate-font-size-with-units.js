@@ -22,8 +22,8 @@ const PX_FROM_PC = 16;
 export default (defaultFontSize, rootFontSize, parentFontSize, [value, units]) => {
 	switch (units) {
 		// Relative units
-		case UNIT_EM: return parentFontSize * value;
-		case UNIT_REM: return rootFontSize * value;
+		case UNIT_EM:      return parentFontSize * value;
+		case UNIT_REM:     return rootFontSize * value;
 		case UNIT_PERCENT: return parentFontSize * (value / 100);
 		// Absolute units
 		case UNIT_PX: return value * PX_FROM_PX;
