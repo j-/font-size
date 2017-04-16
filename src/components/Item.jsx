@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import ItemInput from './ItemInput';
 
-const ItemRoot = ({ value, onChange, ...props }) => (
-	<div className="font-size-item font-size-item--root">
+const Item = ({ value, onChange, index, ...props }) => (
+	<div className="font-size-item">
 		<ItemInput
 			value={ value }
 			onChange={ onChange }
@@ -12,9 +12,10 @@ const ItemRoot = ({ value, onChange, ...props }) => (
 	</div>
 );
 
-ItemRoot.propTypes = {
+Item.propTypes = {
 	value: PropTypes.string.isRequired,
 	onChange: PropTypes.func.isRequired,
+	index: PropTypes.number.isRequired,
 };
 
-export default ItemRoot;
+export default Item;

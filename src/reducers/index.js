@@ -27,6 +27,14 @@ export const getStackItems = (state) => (
 	stackModule.getItems(state.stack)
 );
 
+export const getStackLength = (state) => (
+	stackModule.countItems(state.stack)
+);
+
+export const getItemByIndex = (state, index) => (
+	stackModule.getItemByIndex(state.stack, index)
+);
+
 export const getFinalFontSize = (state) => {
 	const defaultFontSize = getDefaultFontSize(state);
 	const rootItem = getRootItem(state);

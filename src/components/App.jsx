@@ -1,5 +1,5 @@
 import React from 'react';
-import ItemsStack from './ItemsStack';
+import ItemsStackContainer from './ItemsStackContainer';
 
 const App = () => (
 	<div>
@@ -9,7 +9,7 @@ const App = () => (
 			<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/length">'&lt;length&gt;' on MDN</a></li>
 			<li><a href="http://pxtoem.com/">PXtoEM.com</a></li>
 		</ul>
-		<ItemsStack />
+		<ItemsStackContainer />
 	</div>
 );
 

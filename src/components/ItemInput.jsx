@@ -1,21 +1,19 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 export default class ItemInput extends Component {
 	constructor (props) {
 		super(props);
-		this.handleBlur = this.handleBlur.bind(this);
-		this.handleKeyDown = this.handleKeyDown.bind(this);
+		this.state = {
+			value: props.value,
+		};
+		this.handleChange = this.handleChange.bind(this);
 	}
 
-	handleBlur (e) {
-		this.props.onChange(e.target.value);
-	}
-
-	handleKeyDown (e) {
-		if (e.key !== 'Enter') {
-			return;
-		}
-		this.props.onChange(e.target.value);
+	handleChange (e) {
+		const { value } = e.target;
+		const { onChange } = this.props;
+		this.setState({ value }, () => onChange(value));
 	}
 
 	render () {
@@ -23,11 +21,15 @@ export default class ItemInput extends Component {
 		return (
 			<input
 				type="text"
-				defaultValue={ value }
-				onBlur={ this.handleBlur }
-				onKeyDown={ this.handleKeyDown }
+				value={ value }
+				onChange={ this.handleChange }
 				{ ...props }
 			/>
 		);
 	}
 }
+
+ItemInput.propTypes = {
+	value: PropTypes.string,
+	onChange: PropTypes.func.isRequired,
+};

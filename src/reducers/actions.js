@@ -1,6 +1,7 @@
 import {
 	SET_DEFAULT_SIZE,
 	SET_ROOT_ITEM,
+	SET_ITEM,
 } from './types';
 
 import { parseItem } from './parser';
@@ -16,5 +17,13 @@ export const setRootItem = (value) => ({
 	type: SET_ROOT_ITEM,
 	data: {
 		item: parseItem(value),
+	},
+});
+
+export const setItemByIndex = (value, index) => ({
+	type: SET_ITEM,
+	data: {
+		item: parseItem(value),
+		index,
 	},
 });
