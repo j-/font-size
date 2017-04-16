@@ -10,7 +10,7 @@ const getStackElements = (count) => {
 		elements.push(
 			<li key={ i } value={ i + 1 }>
 				<ItemContainer index={ i } />
-				<RemoveButtonContainer index={ i } />
+				{ i < count && <RemoveButtonContainer index={ i } /> }
 			</li>
 		);
 	}
