@@ -11,6 +11,7 @@ import {
 	VALUE_INHERIT,
 	VALUE_INITIAL,
 	VALUE_UNSET,
+	VALUE_ZERO,
 } from './values';
 
 export default (rootFontSize, parentFontSize, [value]) => {
@@ -30,6 +31,7 @@ export default (rootFontSize, parentFontSize, [value]) => {
 		case VALUE_INHERIT: return parentFontSize;
 		case VALUE_INITIAL: return rootFontSize; // TODO: double check this one
 		case VALUE_UNSET: return parentFontSize;
+		case VALUE_ZERO: return 0;
 		// Unknown values
 		default: throw new Error(`Did not recognise value "${value}"`);
 	}
