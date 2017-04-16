@@ -19,7 +19,7 @@ const PX_FROM_IN = 96;
 const PX_FROM_PT = 4 / 3;
 const PX_FROM_PC = 16;
 
-export default (rootFontSize, parentFontSize, [value, units]) => {
+export default (defaultFontSize, rootFontSize, parentFontSize, [value, units]) => {
 	switch (units) {
 		// Relative units
 		case UNIT_EM: return parentFontSize * value;

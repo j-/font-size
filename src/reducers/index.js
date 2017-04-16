@@ -24,11 +24,11 @@ export const getStackItems = (state) => (
 );
 
 export const getFinalFontSize = (state) => {
-	const defaultSize = getDefaultFontSize(state);
+	const defaultFontSize = getDefaultFontSize(state);
 	const rootItem = getRootItem(state);
-	const rootFontSize = calculateFontSize(defaultSize, defaultSize, rootItem);
+	const rootFontSize = calculateFontSize(defaultFontSize, defaultFontSize, defaultFontSize, rootItem);
 	const stack = getStackItems(state);
 	return stack.reduce((parentFontSize, item) => (
-		calculateFontSize(rootFontSize, parentFontSize, item)
+		calculateFontSize(defaultFontSize, rootFontSize, parentFontSize, item)
 	), rootFontSize);
 };

@@ -14,7 +14,7 @@ import {
 	VALUE_ZERO,
 } from './values';
 
-export default (rootFontSize, parentFontSize, [value]) => {
+export default (defaultFontSize, rootFontSize, parentFontSize, [value]) => {
 	switch (value) {
 		// Relative values
 		case VALUE_LARGER: return 1.2 * parentFontSize;
@@ -29,7 +29,7 @@ export default (rootFontSize, parentFontSize, [value]) => {
 		case VALUE_XX_LARGE: return 32;
 		// Other values
 		case VALUE_INHERIT: return parentFontSize;
-		case VALUE_INITIAL: return rootFontSize; // TODO: double check this one
+		case VALUE_INITIAL: return defaultFontSize;
 		case VALUE_UNSET: return parentFontSize;
 		case VALUE_ZERO: return 0;
 		// Unknown values
