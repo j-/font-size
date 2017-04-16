@@ -1,4 +1,8 @@
 import {
+	SET_ROOT_ITEM,
+} from './types';
+
+import {
 	UNIT_PERCENT,
 } from './units';
 
@@ -8,6 +12,11 @@ const DEFAULT_STATE = {
 
 export default (state = DEFAULT_STATE, action) => {
 	switch (action.type) {
+		case SET_ROOT_ITEM:
+			return {
+				...state,
+				item: action.data.item,
+			};
 		default:
 			return state;
 	}
