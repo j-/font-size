@@ -11,6 +11,10 @@ export default combineReducers({
 	stack,
 });
 
+export const formatItem = (item) => (
+	(item || []).join('')
+);
+
 export const getDefaultFontSize = (state) => (
 	defaultSizeModule.getDefaultFontSize(state.defaultSize)
 );
