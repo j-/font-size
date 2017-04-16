@@ -2,6 +2,7 @@ import {
 	SET_DEFAULT_SIZE,
 	SET_ROOT_ITEM,
 	SET_ITEM,
+	REMOVE_ITEM,
 } from './types';
 
 import { parseItem } from '../utils/parser';
@@ -24,6 +25,13 @@ export const setItemByIndex = (value, index) => ({
 	type: SET_ITEM,
 	data: {
 		item: parseItem(value),
+		index,
+	},
+});
+
+export const removeItemByIndex = (index) => ({
+	type: REMOVE_ITEM,
+	data: {
 		index,
 	},
 });

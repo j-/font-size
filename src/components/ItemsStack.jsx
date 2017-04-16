@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import ItemRootContainer from './ItemRootContainer';
 import ItemContainer from './ItemContainer';
+import RemoveButtonContainer from './RemoveButtonContainer';
 
 const getStackElements = (count) => {
 	const elements = [];
@@ -9,6 +10,7 @@ const getStackElements = (count) => {
 		elements.push(
 			<li key={ i } value={ i + 1 }>
 				<ItemContainer index={ i } />
+				<RemoveButtonContainer index={ i } />
 			</li>
 		);
 	}

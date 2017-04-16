@@ -7,7 +7,14 @@ export default class ItemInput extends Component {
 		this.state = {
 			value: props.value,
 		};
+		this.input = null;
 		this.handleChange = this.handleChange.bind(this);
+	}
+
+	componentWillReceiveProps ({ value }) {
+		if (document.activeElement !== this.input) {
+			this.setState({ value });
+		}
 	}
 
 	handleChange (e) {
@@ -24,6 +31,7 @@ export default class ItemInput extends Component {
 				{ ...this.props }
 				value={ value }
 				onChange={ this.handleChange }
+				ref={ (input) => this.input = input }
 			/>
 		);
 	}

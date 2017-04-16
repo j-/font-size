@@ -1,5 +1,6 @@
 import {
 	SET_ITEM,
+	REMOVE_ITEM,
 } from './types';
 
 const DEFAULT_STATE = [];
@@ -10,6 +11,12 @@ export default (state = DEFAULT_STATE, action) => {
 			const { item, index } = action.data;
 			const result = [...state];
 			result[index] = item;
+			return result;
+		}
+		case REMOVE_ITEM: {
+			const { index } = action.data;
+			const result = [...state];
+			result.splice(index, 1);
 			return result;
 		}
 		default:
