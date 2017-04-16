@@ -38,9 +38,18 @@ export const getItemByIndex = (state, index) => (
 export const getFinalFontSize = (state) => {
 	const defaultFontSize = getDefaultFontSize(state);
 	const rootItem = getRootItem(state);
-	const rootFontSize = calculateRootFontSize(defaultFontSize, rootItem);
 	const stack = getStackItems(state);
-	return stack.reduce((parentFontSize, item) => (
-		calculateFontSize(defaultFontSize, rootFontSize, parentFontSize, item)
-	), rootFontSize);
+	let rootFontSize;
+	try {
+		rootFontSize = calculateRootFontSize(defaultFontSize, rootItem);
+	} catch (err) {
+		rootFontSize = defaultFontSize;
+	}
+	return stack.reduce((parentFontSize, item) => {
+		try {
+			return calculateFontSize(defaultFontSize, rootFontSize, parentFontSize, item);
+		} catch (err) {
+			return parentFontSize;
+		}
+	}, rootFontSize);
 };

@@ -1,5 +1,6 @@
 import React from 'react';
 import ItemsStackContainer from './ItemsStackContainer';
+import FontSizeContainer from './FontSizeContainer';
 
 const App = () => (
 	<div>
@@ -10,6 +11,7 @@ const App = () => (
 			<li><a href="http://pxtoem.com/">PXtoEM.com</a></li>
 		</ul>
 		<ItemsStackContainer />
+		<FontSizeContainer />
 	</div>
 );
 
