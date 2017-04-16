@@ -4,11 +4,11 @@ import ItemInput from './ItemInput';
 import {
 	getRootItem,
 	formatItem,
-} from '../reducers';
+} from '../store';
 
 import {
 	setRootItem,
-} from '../reducers/actions';
+} from '../store/actions';
 
 const mapStateToProps = (state) => ({
 	value: formatItem(

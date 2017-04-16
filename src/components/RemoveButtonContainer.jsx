@@ -3,7 +3,7 @@ import RemoveButton from './RemoveButton';
 
 import {
 	removeItemByIndex,
-} from '../reducers/actions';
+} from '../store/actions';
 
 const mapStateToProps = null;
 

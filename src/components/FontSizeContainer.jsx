@@ -4,7 +4,7 @@ import FontSize from './FontSize';
 
 import {
 	getFinalFontSize,
-} from '../reducers';
+} from '../store';
 
 const mapStateToProps = (state) => ({
 	px: getFinalFontSize(state),

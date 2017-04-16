@@ -5,11 +5,11 @@ import ItemInput from './ItemInput';
 import {
 	getItemByIndex,
 	formatItem,
-} from '../reducers';
+} from '../store';
 
 import {
 	setItemByIndex,
-} from '../reducers/actions';
+} from '../store/actions';
 
 const mapStateToProps = (state, { index }) => ({
 	value: formatItem(

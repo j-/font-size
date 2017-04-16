@@ -3,7 +3,7 @@ import ItemsStack from './ItemsStack';
 
 import {
 	getStackLength,
-} from '../reducers';
+} from '../store';
 
 const mapStateToProps = (state) => ({
 	count: getStackLength(state),
