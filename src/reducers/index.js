@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import calculateFontSize from './calculate-font-size';
+import { calculateFontSize, calculateRootFontSize } from './calculate-font-size';
 
 import defaultSize, * as defaultSizeModule from './reducer-default-size';
 import rootSize, * as rootSizeModule from './reducer-root-size';
@@ -26,7 +26,7 @@ export const getStackItems = (state) => (
 export const getFinalFontSize = (state) => {
 	const defaultFontSize = getDefaultFontSize(state);
 	const rootItem = getRootItem(state);
-	const rootFontSize = calculateFontSize(defaultFontSize, defaultFontSize, defaultFontSize, rootItem);
+	const rootFontSize = calculateRootFontSize(defaultFontSize, rootItem);
 	const stack = getStackItems(state);
 	return stack.reduce((parentFontSize, item) => (
 		calculateFontSize(defaultFontSize, rootFontSize, parentFontSize, item)
