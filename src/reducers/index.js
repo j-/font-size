@@ -1,12 +1,10 @@
-const DEFAULT_STATE = {
-	defaultFontSizePx: 16,
-};
+import { combineReducers } from 'redux';
+import defaultSize, * as defaultSizeModule from './reducer-default-size';
 
-export default (state = DEFAULT_STATE, action) => {
-	switch (action.type) {
-		default:
-			return state;
-	}
-};
+export default combineReducers({
+	defaultSize,
+});
 
-export const getDefaultFontSize = (state) => state.defaultFontSizePx;
+export const getDefaultFontSize = (state) => (
+	defaultSizeModule.getDefaultFontSize(state.defaultSize)
+);
