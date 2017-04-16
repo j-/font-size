@@ -1,0 +1,1 @@
+export const SET_DEFAULT_SIZE = 'SET_DEFAULT_SIZE';
