@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import ItemRoot from './ItemRoot';
+import ItemInput from './ItemInput';
 
 import {
 	getRootItem,
@@ -23,4 +23,4 @@ const mapDispatchToProps = {
 export default connect(
 	mapStateToProps,
 	mapDispatchToProps
-)(ItemRoot);
+)(ItemInput);
