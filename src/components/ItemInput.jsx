@@ -17,13 +17,13 @@ export default class ItemInput extends Component {
 	}
 
 	render () {
-		const { value, onChange, ...props } = this.props;
+		const { value } = this.state;
 		return (
 			<input
 				type="text"
+				{ ...this.props }
 				value={ value }
 				onChange={ this.handleChange }
-				{ ...props }
 			/>
 		);
 	}
