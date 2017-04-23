@@ -9,8 +9,15 @@ const getStackElements = (count) => {
 	for (let i = 0; i <= count; i++) {
 		elements.push(
 			<li key={ i } value={ i + 1 } className="font-size-item">
-				<ItemContainer index={ i } />
-				{ i < count && <RemoveButtonContainer index={ i } /> }
+				<div className="font-size-item--input-container">
+					<ItemContainer index={ i } />
+				</div>
+				{
+					(i < count) &&
+					<div className="font-size-item--button-container">
+						<RemoveButtonContainer index={ i } />
+					</div>
+				}
 			</li>
 		);
 	}
@@ -66,7 +73,9 @@ export default class ItemsStack extends Component {
 		return (
 			<ol ref="items" className="font-size-items" onKeyDown={ this.handleKeyDown }>
 				<li value={ 0 } className="font-size-item font-size-item--root">
-					<ItemRootContainer />
+					<div className="font-size-item--input-container">
+						<ItemRootContainer />
+					</div>
 				</li>
 				{ getStackElements(count) }
 			</ol>

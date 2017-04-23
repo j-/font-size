@@ -3,7 +3,8 @@ import PropTypes from 'prop-types';
 
 const FontSize = ({ px }) => (
 	<div className="font-size">
-		{ px }px
+		<strong className="font-size-label">Final font size</strong><br />
+		<output className="font-size-value">{ `${px}px` }</output>
 	</div>
 );
 
