@@ -1,5 +1,5 @@
 import { unitIsRelative, unitIsAbsolute } from './units';
-import { valueIsRelative, valueIsAbsolute } from './values';
+import { keywordIsRelative, keywordIsAbsolute } from './keywords';
 
 export type FontSizeValue = FontSizeKeyword | FontSizeLength
 
@@ -27,11 +27,11 @@ export interface CalculateFontSize<T extends FontSizeValue> {
 }
 
 export const fontSizeIsRelative = (fontSize: FontSizeValue) => (
-  isFontSizeKeyword(fontSize) && valueIsRelative(fontSize[0]) ||
+  isFontSizeKeyword(fontSize) && keywordIsRelative(fontSize[0]) ||
   isFontSizeLength(fontSize) && unitIsRelative(fontSize[1])
 );
 
 export const fontSizeIsAbsolute = (fontSize: FontSizeValue) => (
-  isFontSizeKeyword(fontSize) && valueIsAbsolute(fontSize[0]) ||
+  isFontSizeKeyword(fontSize) && keywordIsAbsolute(fontSize[0]) ||
   isFontSizeLength(fontSize) && unitIsAbsolute(fontSize[1])
 );
