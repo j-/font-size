@@ -1,5 +1,5 @@
 import { Value } from './values';
-import { CalculateFontSize, FontSizeKeyword } from './types';
+import { CalculateFontSize, FontSizeKeyword } from './font-size';
 
 const calculateKeyword: CalculateFontSize<FontSizeKeyword> = (defaultFontSize, _rootFontSize, parentFontSize, [value]) => {
   switch (value) {

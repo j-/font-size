@@ -1,6 +1,6 @@
 import calculateLength from './calculate-length';
 import calculateKeyword from './calculate-keyword';
-import { CalculateFontSize, FontSizeValue, isFontSizeKeyword, isFontSizeLength } from './types';
+import { CalculateFontSize, FontSizeValue, isFontSizeKeyword, isFontSizeLength } from './font-size';
 
 export const calculateFontSize: CalculateFontSize<FontSizeValue> = (defaultFontSize, rootFontSize, parentFontSize, value) => {
   if (isFontSizeKeyword(value)) {

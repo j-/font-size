@@ -1,4 +1,4 @@
-import { FontSizeValue } from './types';
+import { FontSizeValue } from './font-size';
 
 /**
  * Matches:

@@ -1,4 +1,4 @@
-import { CalculateFontSize, FontSizeLength } from './types';
+import { CalculateFontSize, FontSizeLength } from './font-size';
 import { Unit } from './units';
 import { convert } from './convert';
 

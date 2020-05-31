@@ -1,4 +1,4 @@
-import { FontSizeValue, isFontSizeKeyword, isFontSizeLength } from './types';
+import { FontSizeValue, isFontSizeKeyword, isFontSizeLength } from './font-size';
 
 export const formatItem = (item: FontSizeValue | null) => {
   if (!item) return '';

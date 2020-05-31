@@ -1,4 +1,4 @@
-import { FontSizeLength, isFontSizeLength } from './types';
+import { FontSizeLength, isFontSizeLength } from './font-size';
 import { unitIsAbsolute } from './units';
 import { convert } from './convert';
 import { parseFontSize } from './parse-font-size';
