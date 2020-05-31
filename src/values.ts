@@ -1,21 +1,38 @@
-/* Relative values */
+export enum Value {
+  LARGER   = 'larger',   // 1.2
+  SMALLER  = 'smaller',  // 1 / 1.2
+  XX_SMALL = 'xx-small', // 9px
+  X_SMALL  = 'x-small',  // 10px
+  SMALL    = 'small',    // 13px
+  MEDIUM   = 'medium',   // 16px
+  LARGE    = 'large',    // 18px
+  X_LARGE  = 'x-large',  // 24px
+  XX_LARGE = 'xx-large', // 32px
+  INHERIT  = 'inherit',  // 100%
+  INITIAL  = 'initial',  // 16px
+  UNSET    = 'unset',    // 100%
+  ZERO     = '0',
+}
 
-export const VALUE_LARGER   = 'larger';   // 1.2
-export const VALUE_SMALLER  = 'smaller';  // 1 / 1.2
+export type RelativeValue =
+  Value.LARGER |
+  Value.SMALLER
 
-/* Absolute values */
+export const valueIsRelative = (value: string): value is RelativeValue => (
+  value === Value.LARGER ||
+  value === Value.SMALLER
+);
 
-export const VALUE_XX_SMALL = 'xx-small'; // 9px
-export const VALUE_X_SMALL  = 'x-small';  // 10px
-export const VALUE_SMALL    = 'small';    // 13px
-export const VALUE_MEDIUM   = 'medium';   // 16px
-export const VALUE_LARGE    = 'large';    // 18px
-export const VALUE_X_LARGE  = 'x-large';  // 24px
-export const VALUE_XX_LARGE = 'xx-large'; // 32px
+export type AbsoluteValue =
+  Value.LARGER |
+  Value.SMALLER
 
-/* Other values */
-
-export const VALUE_INHERIT  = 'inherit';  // 100%
-export const VALUE_INITIAL  = 'initial';  // 16px
-export const VALUE_UNSET    = 'unset';    // 100%
-export const VALUE_ZERO     = '0';
+export const valueIsAbsolute = (value: string): value is AbsoluteValue => (
+  value === Value.XX_SMALL ||
+  value === Value.X_SMALL ||
+  value === Value.SMALL ||
+  value === Value.MEDIUM ||
+  value === Value.LARGE ||
+  value === Value.X_LARGE ||
+  value === Value.XX_LARGE
+);
