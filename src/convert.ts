@@ -12,6 +12,8 @@ These lengths are all equal:
 
 */
 
+import { Unit } from './units';
+
 export const BASE_PX = 4800;
 export const BASE_MM = 1270;
 export const BASE_Q  = 5080;
@@ -19,26 +21,6 @@ export const BASE_CM = 127;
 export const BASE_IN = 50;
 export const BASE_PT = 3600;
 export const BASE_PC = 300;
-
-export enum Unit {
-  PX = 'px',
-  MM = 'mm',
-  Q  = 'Q',
-  CM = 'cm',
-  IN = 'in',
-  PT = 'pt',
-  PC = 'pc',
-}
-
-export const unitIsAbsolute = (unit: string): unit is Unit => (
-  unit === Unit.PX ||
-  unit === Unit.MM ||
-  unit === Unit.Q  ||
-  unit === Unit.CM ||
-  unit === Unit.IN ||
-  unit === Unit.PT ||
-  unit === Unit.PC
-);
 
 const convertTo = (toUnit: Unit, value: number) => {
   switch (toUnit) {

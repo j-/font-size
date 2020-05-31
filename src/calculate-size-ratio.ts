@@ -1,5 +1,6 @@
 import { FontSizeLength, isFontSizeLength } from './types';
-import { unitIsAbsolute, convert } from './convert';
+import { unitIsAbsolute } from './units';
+import { convert } from './convert';
 import { parseFontSize } from './parse-font-size';
 
 export const calculateSizeRatio = ([leftValue, leftUnit]: FontSizeLength, [rightValue, rightUnit]: FontSizeLength) => {

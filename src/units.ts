@@ -1,15 +1,42 @@
-/* Relative length units */
+export enum Unit {
+  PX = 'px',
+  MM = 'mm',
+  Q  = 'Q',
+  CM = 'cm',
+  IN = 'in',
+  PT = 'pt',
+  PC = 'pc',
+  EM = 'em',
+  REM = 'rem',
+  PERCENT = '%',
+}
 
-export const UNIT_EM      = 'em';
-export const UNIT_REM     = 'rem';
-export const UNIT_PERCENT = '%';
+export type AbsoluteUnit =
+  Unit.PX |
+  Unit.MM |
+  Unit.Q |
+  Unit.CM |
+  Unit.IN |
+  Unit.PT |
+  Unit.PC
 
-/* Absolute length units */
+export const unitIsAbsolute = (unit: string): unit is AbsoluteUnit => (
+  unit === Unit.PX ||
+  unit === Unit.MM ||
+  unit === Unit.Q ||
+  unit === Unit.CM ||
+  unit === Unit.IN ||
+  unit === Unit.PT ||
+  unit === Unit.PC
+);
 
-export const UNIT_PX = 'px';
-export const UNIT_MM = 'mm'; // 25.4mm = 96px
-export const UNIT_Q  = 'Q';  // 40Q = 1cm
-export const UNIT_CM = 'cm'; // 2.54cm = 96px
-export const UNIT_IN = 'in'; // 1in = 96px
-export const UNIT_PT = 'pt'; // 3pt = 4px
-export const UNIT_PC = 'pc'; // 1pc = 12pt
+export type RelativeUnit =
+  Unit.EM |
+  Unit.REM |
+  Unit.PERCENT
+
+export const unitIsRelative = (unit: string): unit is RelativeUnit => (
+  unit === Unit.EM ||
+  unit === Unit.REM ||
+  unit === Unit.PERCENT
+);

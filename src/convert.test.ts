@@ -1,4 +1,5 @@
-import { Unit, convert } from './convert';
+import { Unit } from './units';
+import { convert } from './convert';
 
 test.each`
   a       | fromUnit   | b       | toUnit
